@@ -4,6 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .card {
+        border: 2px solid red;
+        padding: 5px;
+        width: 500px;
+        height: 400px;
+        border-radius: 7px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      function datang() {
+        var d = new Date();
+        var hari = d.getDay();
+        var bulan = d.getUTCMonth();
+        var tahun = d.getFullYear();
+        var tanggal = hari + "-" + bulan + "-" + tahun;
+        alert("Selamat Datang \n" + tanggal);
+      }
+
+      function waktu() {
+        var d = new Date();
+        var jam = d.getHours();
+        var menit = d.getMinutes();
+        var detik = d.getSeconds();
+
+        var strwaktu = jam < 10 ? "0" + jam : jam + ":";
+        strwaktu += menit < 10 ? "0" + menit : menit + ":";
+        strwaktu += detik < 10 ? "0" + detik : detik;
+
+        console.log(strwaktu);
+        document.waktuini.txtwaktu.value = " " + strwaktu;
+        setTimeout("waktu()", 200);
+      }
+      function siang() {
+        document.f.mode.style.display = "none";
+        document.f.mode1.style.display = "block";
+        document.bgColor = "black";
+        document.body.style.color = "white";
+      }
+      function malam() {
+        document.f.mode1.style.display = "none";
+        document.f.mode.style.display = "block";
+        document.bgColor = "white";
+        document.body.style.color = "black";
+      }
+
+      function diIsi() {
+        if (document.cari.kunci.value == "") {
+          alert("Gak Jadi Nyari?");
+        }
+      }
+
+      function cobaCari() {
+        if (document.cari.kunci.value == "") {
+          alert("Pencarian Masih Kosong");
+        }
+      }
+    </script>
+    <span><b>Mode</b></span>
+    <form action="" name="f">
+      <img
+        src="https://raw.githubusercontent.com/erihidayat06/dasar-javscript/main/img/malam.png"
+        name="mode1"
+        width="50px"
+        alt=""
+        onclick="malam()"
+        style="display: none" />
+
+      <img
+        src="https://raw.githubusercontent.com/erihidayat06/dasar-javscript/main/img/siang.png"
+        name="mode"
+        width="50px"
+        alt=""
+        onclick="siang()" />
+    </form>
+
+    <center>
+      <h1>Selamat Datang di Website Pencarian Sederhana</h1>
+      <div class="card">
+        <p>Waktu Sekarang</p>
+        <form action="" name="waktuini">
+          <input type="text" name="txtwaktu" />
+        </form>
+        <h2>Silahkan Cari Disini</h2>
+        <form action="" name="cari">
+          <input
+            type="text"
+            name="kunci"
+            onfocus="window.status='Sialahkan Masukan Kata Kunci'"
+            onblur="diIsi()" />
+          <input type="button" value="cari" onclick="cobaCari()" />
+        </form>
+      </div>
+    </center>
+
+    <script>
+      waktu();
+    </script>
+  </body>
 </html>
