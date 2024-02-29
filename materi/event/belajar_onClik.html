@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar onclick</title>
+  </head>
+  <body>
+    <script>
+      function gantiTag(warna) {
+        alert("Warna Yang Kamu Pilih : " + warna);
+        document.bgColor = warna;
+      }
+    </script>
+    <form>
+      <input type="button" value="Merah" onClick="gantiTag('red')" />
+      <input type="button" value="Kuning" onClick="gantiTag('yellow')" />
+      <input type="button" value="Hijau" onClick="gantiTag('green')" />
+    </form>
+    <h1>Event onClick</h1>
+
+    <form>
+      <img
+        src="https://lh3.googleusercontent.com/-iZd3NMzL7WI/ZeAgoOwwckI/AAAAAAAAAxI/3pCo88b0r7IyGEwCiEXHVa3xJj2EGJsgwCNcBGAsYHQ/h120/off.png"
+        name="coolfan"
+        alt="" />
+      <br /><br />
+      <input
+        type="button"
+        value="ON"
+        onClick="coolfan.src='https://lh3.googleusercontent.com/-srBvnfCR9-E/ZeAgfhIDrAI/AAAAAAAAAxE/UG2YMcb19OES08K2WcVE1dkjgbdbc9newCNcBGAsYHQ/h120/on.png'" />
+      <input
+        type="button"
+        value="OFF"
+        onClick="coolfan.src='https://lh3.googleusercontent.com/-iZd3NMzL7WI/ZeAgoOwwckI/AAAAAAAAAxI/3pCo88b0r7IyGEwCiEXHVa3xJj2EGJsgwCNcBGAsYHQ/h120/off.png'" />
+    </form>
+  </body>
+</html>

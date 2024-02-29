@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coba Document</title>
+  </head>
+
+  <body>
+    <p id="HTMLP"></p>
+    <p class="className">Ini Element Class</p>
+    <p class="className">Ini Element Class ke 2</p>
+    <p id="textP"></p>
+
+    <script>
+      const p = document.getElementById("HTMLP");
+      const p2 = document.getElementsByClassName("className");
+      const textP = document.getElementById("textP");
+      const newElement = document.createElement("p");
+      const gambar = document.createElement("img");
+      document.write("<h1> Coba write </h1>");
+
+      document.body.style.backgroundColor = "pink";
+      p.innerHTML = "Hello <b> World!! </b>";
+      p.style.fontFamily = "Arial";
+      console.log(p2);
+      p2[1].style.fontWeight = "bold";
+      p2[1].style.color = "blue";
+      textP.innerText = "Belajar document ";
+      gambar.setAttribute("scr", "https://picsum.photos/200/300");
+      newElement.textContent = "Serunya Belajar JavaScript";
+
+      document.body.append(newElement);
+
+      setInterval(function () {
+        p2[1].style.color = "red";
+        p2[1].style.fontFamily = "Arial";
+
+        setTimeout(function () {
+          p2[1].style.color = "black";
+          p2[1].style.fontFamily = "Arial";
+          newElement.remove();
+        }, 1000);
+      }, 2000);
+    </script>
+  </body>
+</html>

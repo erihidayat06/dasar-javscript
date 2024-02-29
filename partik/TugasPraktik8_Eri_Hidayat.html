@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .btn {
+        border: none;
+        background-color: blueviolet;
+        color: white;
+        padding: 10px;
+        width: 100px;
+        border-radius: 7px;
+      }
+
+      #judul {
+        display: none;
+      }
+
+      #jawaban {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sebutkan Nama</h2>
+    <button class="btn" onclick="masukan()">Klik Disini</button>
+
+    <p id="judul">Nama Kamu</p>
+    <div id="jawaban"></div>
+
+    <script>
+      let jawaban;
+      var jawab = document.getElementById("jawaban");
+      var judul = document.getElementById("judul");
+
+      function masukan() {
+        jawaban = prompt("Masukan Nama");
+        if (jawaban != null) {
+          console.log(jawaban);
+          jawab.innerHTML = jawaban;
+          alert("terimakasih sudah menjawab " + jawaban);
+          judul.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

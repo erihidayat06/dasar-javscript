@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onLoad dan onUnload</title>
+  </head>
+  <body onload="tanggal()" onunload="tutup()">
+    <script>
+      function tanggal() {
+        var d = new Date();
+        var y = d.getFullYear();
+        var m = d.getMonth();
+        var d = d.getDate();
+        var t = d + " / " + m + " / " + y;
+        defaultStatus = "Anda datang pada tanggal " + t + ".";
+        alert("Selamat datang teman \n silahkan masuk ke website ku");
+      }
+
+      function timer() {
+        var d = new Date();
+        var jam = d.getHours();
+        var menit = d.getMinutes();
+        var detik = d.getSeconds();
+
+        var strwaktu = jam < 10 ? "0" + jam : jam + " : ";
+        strwaktu += menit < 10 ? "0" + menit : menit;
+        strwaktu += detik < 10 ? "0" + detik : " : " + detik;
+
+        document.f.txtwaktu.value = " " + strwaktu;
+        setTimeout("timer()", 200);
+      }
+
+      function tutup() {
+        window.alert("Terimakasih sudah mengunjungi");
+      }
+    </script>
+
+    <h1>Selamat datang di Website</h1>
+    <form action="" name="f">
+      <input type="text" name="txtwaktu" />
+    </form>
+
+    <script>
+      timer();
+    </script>
+  </body>
+</html>

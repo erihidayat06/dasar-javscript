@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar pasien Rumah Sakit</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid #00ff95;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #00ff95;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>RS. Game Lab Indonesia</h3>
+    <form id="formPasien" onsubmit="tambahPasien(); return false;">
+      <label for="id_pasien">ID Pasien</label><br />
+      <input
+        type="text"
+        id="id_pasien"
+        name="id_pasien"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="nama">Nama</label><br />
+      <input
+        type="text"
+        id="nama"
+        name="nama"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="alamat">Alamat</label><br />
+      <input
+        type="text"
+        id="alamat"
+        name="alamat"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="penyakit">Penyakit</label><br />
+      <input
+        type="text"
+        id="penyakit"
+        name="penyakit"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="no_ruang">Nomor Ruangan</label><br />
+      <input
+        type="text"
+        id="no_ruang"
+        name="no_ruang"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="bpjs">BPJS</label><br />
+      <input
+        type="text"
+        id="bpjs"
+        name="bpjs"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="tanggal_masuk">Tanggal Masuk</label><br />
+      <input
+        type="date"
+        id="tanggal_masuk"
+        name="tanggal_masuk"
+        style="margin-bottom: 15px" /><br />
+
+      <label for="tanggal_keluar">Tanggal Keluar</label><br />
+      <input
+        type="date"
+        id="tanggal_keluar"
+        name="tanggal_keluar"
+        style="margin-bottom: 15px" /><br />
+
+      <button type="submit">save</button>
+      <button type="button" onclick="tampilkanDataPasien()">show</button>
+      <button type="reset">delete</button>
+    </form>
+
+    <br />
+    <table id="tablePasien">
+      <thead>
+        <tr>
+          <th>id_pasien</th>
+          <th>nama</th>
+          <th>alamat</th>
+          <th>penyakit</th>
+          <th>no_ruang</th>
+          <th>bpjs</th>
+          <th>tanggal_masuk</th>
+          <th>tanggal_keluar</th>
+        </tr>
+      </thead>
+      <tbody id="dataPasien"></tbody>
+    </table>
+
+    <script>
+      function Pasien(
+        id_pasien,
+        nama,
+        alamat,
+        penyakit,
+        no_ruang,
+        bpjs,
+        tanggal_masuk,
+        tanggal_keluar
+      ) {
+        this.id_pasien = id_pasien;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.penyakit = penyakit;
+        this.no_ruang = no_ruang;
+        this.bpjs = bpjs;
+        this.tanggal_masuk = tanggal_masuk;
+        this.tanggal_keluar = tanggal_keluar;
+      }
+
+      let dataPasien = [];
+
+      function tambahPasien() {
+        let id_pasien = document.getElementById("id_pasien").value;
+        let nama = document.getElementById("nama").value;
+        let alamat = document.getElementById("alamat").value;
+        let penyakit = document.getElementById("penyakit").value;
+        let no_ruang = document.getElementById("no_ruang").value;
+        let bpjs = document.getElementById("bpjs").value;
+        let tanggal_masuk = document.getElementById("tanggal_masuk").value;
+        let tanggal_keluar = document.getElementById("tanggal_keluar").value;
+
+        if (
+          id_pasien &&
+          nama &&
+          alamat &&
+          penyakit &&
+          no_ruang &&
+          bpjs &&
+          tanggal_masuk &&
+          tanggal_keluar
+        ) {
+          let pasienBaru = new Pasien(
+            id_pasien,
+            nama,
+            alamat,
+            penyakit,
+            no_ruang,
+            bpjs,
+            tanggal_masuk,
+            tanggal_keluar
+          );
+          dataPasien.push(pasienBaru);
+          document.getElementById("formPasien").reset();
+        } else {
+          alert("Mohon lengkapi semua kolom.");
+        }
+      }
+
+      function tampilkanDataPasien() {
+        let tablePasien = document.getElementById("dataPasien");
+        tablePasien.innerHTML = "";
+
+        dataPasien.forEach(function (pasien) {
+          let row = tablePasien.insertRow();
+          let cellId = row.insertCell(0);
+          let cellNama = row.insertCell(1);
+          let cellAlamat = row.insertCell(2);
+          let cellPenyakit = row.insertCell(3);
+          let cellNo = row.insertCell(4);
+          let cellBpjs = row.insertCell(5);
+          let cellTanggalMasuk = row.insertCell(6);
+          let cellTanggalKeluar = row.insertCell(7);
+
+          cellId.textContent = pasien.id_pasien;
+          cellNama.textContent = pasien.nama;
+          cellAlamat.textContent = pasien.alamat;
+          cellPenyakit.textContent = pasien.penyakit;
+          cellNo.textContent = pasien.no_ruang;
+          cellBpjs.textContent = pasien.bpjs;
+          cellTanggalMasuk.textContent = pasien.tanggal_masuk;
+          cellTanggalKeluar.textContent = pasien.tanggal_keluar;
+        });
+      }
+    </script>
+  </body>
+</html>

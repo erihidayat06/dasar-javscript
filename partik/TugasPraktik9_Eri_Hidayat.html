@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktik 9</title>
+  </head>
+  <body>
+    <h1 id="selamat">Selamat Datang</h1>
+    <p id="nama"></p>
+    <p id="namanya">Eri Hidayat</p>
+    <p id="terimakasih">Terimakasih</p>
+
+    <div id="mari">
+      <span class="mari">Mari</span>
+      <span class="mari">Jedak</span>
+      <span class="mari">Jeduk</span>
+    </div>
+
+    <script>
+      const body = document.body;
+      const nama = document.getElementById("nama");
+      const newElement = document.createElement("h1");
+      const mari = document.getElementsByClassName("mari");
+      const mariID = document.getElementById("mari");
+      const selamat = document.getElementById("selamat");
+      const terimakasih = document.getElementById("terimakasih");
+
+      body.style.backgroundColor = "yellow";
+      nama.innerHTML = "<b>Nama Saya</b>";
+      newElement.textContent = "Semoga Sukses Selalu";
+      document.body.append(newElement);
+      mariID.style.fontFamily = "Arial";
+      mari[0].style.fontSize = "20px";
+      mari[1].style.fontSize = "20px";
+      mari[2].style.fontSize = "20px";
+
+      setTimeout(function () {
+        selamat.style.display = "none";
+        nama.style.display = "none";
+        newElement.style.display = "none";
+        mariID.style.display = "none";
+        namanya.style.display = "none";
+        terimakasih.style.display = "none";
+        setTimeout(function () {
+          selamat.style.display = "block";
+          setTimeout(function () {
+            nama.style.display = "block";
+            setTimeout(function () {
+              namanya.style.display = "block";
+              setTimeout(function () {
+                terimakasih.style.display = "block";
+                setTimeout(function () {
+                  mariID.style.display = "block";
+                  setTimeout(function () {
+                    newElement.style.display = "block";
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 2000);
+      });
+
+      setInterval(function () {
+        mari[0].style.fontWeight = "bold";
+        mari[1].style.fontWeight = "";
+        mari[2].style.fontWeight = "200";
+        mari[0].style.color = "red";
+        mari[1].style.color = "black";
+        mari[2].style.color = "black";
+        setTimeout(function () {
+          mari[0].style.fontWeight = "200";
+          mari[1].style.fontWeight = "bold";
+          mari[2].style.fontWeight = "200";
+          mari[0].style.color = "black";
+          mari[1].style.color = "blue";
+          mari[2].style.color = "black";
+          setTimeout(function () {
+            mari[0].style.fontWeight = "200";
+            mari[1].style.fontWeight = "200";
+            mari[2].style.fontWeight = "bold";
+            mari[0].style.color = "black";
+            mari[1].style.color = "black";
+            mari[2].style.color = "green";
+          }, 500);
+        }, 500);
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>belajar_onMouseOut_onMouseOver</title>
+  </head>
+  <body>
+    <h1>Belajar onMouseOut dan onMouseOver</h1>
+    <form action="" name="f">
+      <img
+        name="logo"
+        src="https://lh3.googleusercontent.com/-iZd3NMzL7WI/ZeAgoOwwckI/AAAAAAAAAxI/3pCo88b0r7IyGEwCiEXHVa3xJj2EGJsgwCNcBGAsYHQ/h120/off.png"
+        onMouseOver="document.logo.src='https://lh3.googleusercontent.com/-srBvnfCR9-E/ZeAgfhIDrAI/AAAAAAAAAxE/UG2YMcb19OES08K2WcVE1dkjgbdbc9newCNcBGAsYHQ/h120/on.png'"
+        onMouseOut="document.logo.src='https://lh3.googleusercontent.com/-iZd3NMzL7WI/ZeAgoOwwckI/AAAAAAAAAxI/3pCo88b0r7IyGEwCiEXHVa3xJj2EGJsgwCNcBGAsYHQ/h120/off.png'"
+        alt="" />
+    </form>
+    <br />
+    <a href="" onMouseOver="document.bgColor='yellow'"
+      >Coba kesinih biar Kuning</a
+    ><br />
+    <a
+      href=""
+      onMouseOver="document.bgColor='pink';window.status='Ke youtube'; return true"
+      onMouseOut="alert('Ih Kamu Kaya Cewe')"
+      >Coba kesinih biar Pink</a
+    >
+  </body>
+</html>

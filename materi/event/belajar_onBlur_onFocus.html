@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onblur</title>
+  </head>
+  <body>
+    <script>
+      function masukanNama() {
+        if (document.f.nama.value == "") {
+          alert("Silahkan Masukan Nama Kamu Dulu");
+        }
+      }
+      function masukanNIM() {
+        if (document.f.nim.value == "") {
+          alert("Silahkan Masukan Nim Kamu Dulu");
+        }
+      }
+      function masukanKelas() {
+        if (document.f.kelas.value == "") {
+          alert("Silahkan Masukan Kelas Kamu Dulu");
+        }
+      }
+
+      function tambahData() {
+        if (
+          document.f.nim.value != "" &&
+          document.f.nama.value != "" &&
+          document.f.kelas.value != ""
+        ) {
+          alert("Terima Kasih Telah Mengisi Data");
+        } else {
+          alert("Data Belum Lengkap");
+        }
+      }
+    </script>
+    <h1>Form Mahasiswa</h1>
+    <form action="" name="f">
+      <label for="">Nim</label><br />
+      <input
+        type="text"
+        name="nim"
+        size="23"
+        onFocus="window.status='Silahkan Mengisi Nama anda';"
+        onBlur="masukanNIM()" />
+      <br />
+      <label for="">Nama</label><br />
+      <input
+        type="text"
+        name="nama"
+        size="23"
+        onFocus="window.status='Silahkan Mengisi Nama anda';"
+        onBlur="masukanNama()" />
+      <br />
+      <label for="">Kelas</label><br />
+      <input
+        type="text"
+        name="kelas"
+        size="23"
+        onFocus="window.status='Silahkan Mengisi Kelas anda';"
+        onBlur="masukanKelas()" />
+
+      <p>
+        <input type="button" onclick="tambahData()" value="Simpan" />
+        <input type="reset" value="Reset" />
+      </p>
+    </form>
+  </body>
+</html>

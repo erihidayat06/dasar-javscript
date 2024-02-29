@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>belajar_onSubmit</title>
+  </head>
+  <body>
+    <script>
+      function cari() {
+        var kata = document.f.kunci.value;
+        var hasil = "https://www.google.com/search?q=" + kata;
+        window.open(
+          hasil,
+          "google",
+          (config = "height=500, width=700 scrollbars=yes location=yes")
+        );
+        console.log(kata);
+      }
+    </script>
+    <h1>Selamat Datang di Website Pencarian</h1>
+
+    <form action="" name="f" onSubmit="cari()">
+      <input type="text" name="kunci" />
+      <input type="submit" value="Cari" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>

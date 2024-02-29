@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran</title>
+  </head>
+
+  <body>
+    <h1><ins>FORMULIR PENDAFTARAN</ins></h1>
+    <video width="320" height="240" controls>
+      <source
+        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
+        type="video/mp4" />
+    </video>
+
+    <br />
+
+    <canvas
+      id="myCanvas"
+      width="300"
+      height="130"
+      style="border: solid 1px orange"></canvas>
+
+    <br />
+    <form action="">
+      <table>
+        <tr>
+          <td><label for="nama">Nama Lengkap</label></td>
+          <td>:</td>
+          <td><input type="text" id="nama" /></td>
+        </tr>
+        <tr>
+          <td><label for="tempat_lahir">Tempat Lahir</label></td>
+          <td>:</td>
+          <td><input type="text" id="tempat_lahir" name="tempat_lahir" /></td>
+        </tr>
+        <tr>
+          <td><label>Jenis Kelamin</label></td>
+          <td>:</td>
+          <td>
+            <input
+              type="radio"
+              name="jenis_kelamin"
+              id="laki-laki"
+              value="Laki-laki" />
+            <label for="laki-laki"> Laki-laki</label>
+            <input
+              type="radio"
+              name="jenis_kelamin"
+              id="perempuan"
+              value="Perempuan" />
+            <label for="perempuan"> Perempuan</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="alamat">Alamat</label></td>
+          <td>:</td>
+          <td>
+            <textarea name="alamat" id="alamat" cols="30" rows="5"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td>:</td>
+          <td><input type="email" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="no_hp">No.Hp</label></td>
+          <td>:</td>
+          <td><input type="text" id="no_hp" name="no_hp" /></td>
+        </tr>
+        <tr>
+          <td><label for="kota">Kota</label></td>
+          <td>:</td>
+          <td>
+            <select name="kota" id="kota">
+              <option selected>*****Pilih Kota*****</option>
+              <option value="Tegal">Tegal</option>
+              <option value="Pekalongan">Pekalongan</option>
+              <option value="Semarang">Semarang</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <button type="submit">Simpan</button>
+      <button type="reset">Batal</button>
+    </form>
+
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+
+      var grd = ctx.createLinearGradient(0, 0, 250, 0);
+      grd.addColorStop(0, "orange");
+      grd.addColorStop(1, "yellow");
+      // mengisi dengan gradient
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, 300, 180);
+
+      ctx.font = "30px Text New Roman";
+      ctx.strokeText("Educa Studio", 70, 73);
+    </script>
+  </body>
+</html>
