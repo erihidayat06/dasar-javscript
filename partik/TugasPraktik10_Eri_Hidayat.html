@@ -14,7 +14,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onLoad="datang()">
     <script>
       function datang() {
         var d = new Date();
@@ -63,6 +63,17 @@
           alert("Pencarian Masih Kosong");
         }
       }
+
+      function mencari() {
+        var kata = document.cari.kunci.value;
+        var hasil = "https://www.google.com/search?q=" + kata;
+
+        window.open(
+          hasil,
+          "google",
+          (config = "height=500 ,widht=500 scrollbars=yes location=yes")
+        );
+      }
     </script>
     <span><b>Mode</b></span>
     <form action="" name="f">
@@ -90,13 +101,22 @@
           <input type="text" name="txtwaktu" />
         </form>
         <h2>Silahkan Cari Disini</h2>
-        <form action="" name="cari">
+        <form action="" name="cari" onSubmit="mencari()">
           <input
             type="text"
             name="kunci"
             onfocus="window.status='Sialahkan Masukan Kata Kunci'"
             onblur="diIsi()" />
-          <input type="button" value="cari" onclick="cobaCari()" />
+          <input type="submit" value="cari" onclick="cobaCari()" />
+          <br />
+          <br />
+          <img
+            name="logo"
+            src="https://raw.githubusercontent.com/erihidayat06/dasar-javscript/main/img/tidur.gif"
+            onMouseOver="document.logo.src='https://raw.githubusercontent.com/erihidayat06/dasar-javscript/main/img/senang.gif'"
+            onMouseOut="document.logo.src='https://raw.githubusercontent.com/erihidayat06/dasar-javscript/main/img/tidur.gif'"
+            alt=""
+            width="150px" />
         </form>
       </div>
     </center>

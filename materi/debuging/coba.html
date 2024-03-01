@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling dan Debugging</title>
+  </head>
+  <body>
+    <h1>Error Handling dan Debugging</h1>
+    <button onclick="handleError()">Coba</button>
+
+    <script>
+      function handleError() {
+        try {
+          // Simulasi kesalahan
+          var x = y + 5; // y belum didefinisikan, akan menghasilkan ReferenceError
+        } catch (error) {
+          // Tangkap kesalahan dan tangani dengan baik
+          console.error("Terjadi kesalahan:", error.message);
+          // Lakukan tindakan perbaikan jika diperlukan
+          // Misalnya, definisikan nilai y atau perbaiki kode yang menyebabkan kesalahan
+        }
+      }
+
+      // Contoh penggunaan debugger
+      function debugExample() {
+        var a = 5;
+        var b = 10;
+        var result = a + b;
+
+        // Menempatkan debugger di sini akan memungkinkan kita untuk meninjau nilai variabel saat ini
+        debugger;
+
+        console.log("Hasil penjumlahan:", result);
+      }
+
+      // Panggil fungsi debugExample() untuk melihat penggunaan debugger
+      debugExample();
+    </script>
+  </body>
+</html>

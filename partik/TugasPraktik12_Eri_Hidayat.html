@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debugging</title>
+  </head>
+  <body>
+    <h1>Debaging Program</h1>
+    <input type="number" id="no1" />
+    <input type="number" id="no2" />
+    <button onclick="hitung()">Jumlah</button>
+
+    <script>
+      function hitung() {
+        try {
+          var no1 = document.getElementById("no1").value;
+          var no2 = document.getElementById("no2").value;
+
+          var Jumlah = parseInt(no1) + parseInt(no2);
+          debugger;
+          console.log(Jumlah);
+        } catch (e) {
+          console.error("Terjadi Kesalahan :" + error.message);
+        }
+      }
+    </script>
+  </body>
+</html>

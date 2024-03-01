@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Storage</title>
+  </head>
+  <body>
+    <h2>Masukan Nama Anda di Sini</h2>
+
+    <label for="nama">Nama</label><br />
+    <input type="text" id="nama" />
+    <button id="kirim">Kirim</button>
+
+    <p>Nama Yang Terkirim</p>
+    <p id="listNama"></p>
+  </body>
+
+  <script>
+    const localStorageKey = "PRESS_FREQUENCY";
+
+    if (typeof Storage != "undefined") {
+      if (localStorage.getItem(localStorageKey) === null) {
+        localStorage.setItem(localStorageKey, "");
+      }
+
+      const kirim = document.querySelector("#kirim");
+      const listNama = document.querySelector("#listNama");
+
+      listNama.innerHTML = localStorage.getItem(localStorageKey);
+
+      kirim.addEventListener("click", function () {
+        let nama = document.getElementById("nama").value;
+        let count = localStorage.getItem(localStorageKey);
+
+        count = count + nama + "<br>";
+
+        localStorage.setItem(localStorageKey, count);
+        listNama.innerHTML = localStorage.getItem(localStorageKey);
+      });
+    } else {
+      alert("Browser anda tidak mendukung web storage");
+    }
+  </script>
+</html>
